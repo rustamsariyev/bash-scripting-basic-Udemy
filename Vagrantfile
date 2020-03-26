@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     admin01.vm.network "private_network", ip: "10.9.8.10"
   end
    config.vm.define "server01" do | server01|
-     server01.vm.hostname = "admin01"
+     server01.vm.hostname = "server01"
      server01.vm.network "private_network", ip: "10.9.8.11"
   end
     config.vm.define "server02" do | server02 |
