@@ -1,0 +1,6 @@
+#User to run serviceas.
+User apache
+
+# Group to run service as.
+Group apache
+/#User/ ,/^$/ s/run/execute/

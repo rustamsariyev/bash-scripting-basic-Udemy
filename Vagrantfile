@@ -14,6 +14,18 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "jasonc/centos7"
 
+  config.vm.define "admin01" do | admin01|
+    admin01.vm.hostname = "admin01"
+    admin01.vm.network "private_network", ip: "10.9.8.10"
+  end
+   config.vm.define "server01" do | server01|
+     server01.vm.hostname = "admin01"
+     server01.vm.network "private_network", ip: "10.9.8.11"
+  end
+    config.vm.define "server02" do | server02 |
+      server02.vm.hostname = "server02"
+      server02.vm.network "private_network", ip: "10.9.8.12"
+  end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
